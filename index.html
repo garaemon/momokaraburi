@@ -4,7 +4,8 @@
     <title>杏空振り</title>
     <style type="text/css">
       body {
-        background-image: url(http://livedoor.blogimg.jp/momoclomatome-gif/imgs/7/c/7ce6fef4.gif);
+          height: 2400px;
+          background-image: url(http://livedoor.blogimg.jp/momoclomatome-gif/imgs/7/c/7ce6fef4.gif);
       }
     </style>
         <script type="text/javascript">
@@ -22,5 +23,17 @@
 </script>
   </head>
   <body>
+    <script type-"text/javascript" src="./jquery-1.7.2.min.js"> </script>
+    <script type-"text/javascript">
+      var height = 2400;
+      $(window).bind("scroll", function() {
+      var scrollMid = $(this).height() / 2.0 + $(this).scrollTop();
+      var images = ["http://livedoor.blogimg.jp/momoclomatome-gif/imgs/7/c/7ce6fef4.gif",
+                    "http://livedoor.blogimg.jp/momoclomatome-gif/imgs/6/a/6a614ae3.gif",
+                    "http://livedoor.blogimg.jp/momoclomatome-gif/imgs/6/5/651a45e4.gif"];
+      var target_image = images[Math.floor(scrollMid * images.length / height)];
+      $("body").css("background-image", "url(" + target_image + ")");
+      });
+    </script>
   </body>
 </html>
